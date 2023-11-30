@@ -1,0 +1,16 @@
+.menu {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    background-color: black;
+}
+
+.item {
+    width: 30%;
+    color: white;
+    
+    
+}
