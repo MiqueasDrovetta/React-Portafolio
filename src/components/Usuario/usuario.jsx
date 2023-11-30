@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import './blog.css';
+import './user.css';
 
-export const Blog = () => {
+export const User = () => {
   const fetchData = async () => {
     try {
-      let response = await fetch('https://localhost:7043/Blog/user/1');
+      let response = await fetch('https://localhost:7043/User');
       let json = await response.json();
 
-      setBlogs(json);
+      setUsers(json);
 
       console.log(json);
     } catch (e) {
@@ -25,7 +25,7 @@ export const Blog = () => {
   };
 
   const [loading, setLoading] = useState(true);
-  const [blogs, setBlogs] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     setLoading(true);
@@ -35,32 +35,36 @@ export const Blog = () => {
   return (
     <>
       {loading ? (
-        <div className="spinner">
+        <div className="loader">
           <ImSpinner3 />
         </div>
       ) : (
-        <Table striped bordered hover>
+        <Table bordered hover>
           <thead>
             <tr>
               <th>#</th>
-              <th>Descripción Blog</th>
-              <th>Imagen</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Profesion</th>
+              <th>Correo</th>              
+              <th>Descripcion</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
-            {blogs.map((blog) => (
-              <tr key={blog.id}>
-                <td>{blog.id}</td>
-                <td>{blog.description}</td>
-                <td>{blog.urlImage}</td>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <td>{user.id}</td>
+                <td>{user.nombre}</td>
+                <td>{user.apellido}</td>
+                <td>{user.profesion}</td>
+                <td>{user.gmail}</td>
+                <td>{user.description}</td>
                 <td>
-                  <Link to="" className="btn btn-primary">
-                    Editar
-                  </Link>
-                  <Link to="" className="btn btn-secondary">
-                    Eliminar
-                  </Link>
+                      <Link to={`/User/${user.id}`}>
+                        <button className="btn btn-primary">Editar</button>
+                      </Link>
+                      <button className="btn btn-danger">Eliminar</button>
                 </td>
               </tr>
             ))}

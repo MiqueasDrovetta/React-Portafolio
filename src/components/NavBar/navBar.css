@@ -1,3 +1,4 @@
+/* navBar.css */
 .menu {
     width: 100%;
     height: 50px;
@@ -14,3 +15,68 @@
     
     
 }
+
+
+/* Estilos generales para la barra de navegación */
+.bg-body-tertiary {
+  background-color: #061932;
+}
+
+.basic-navbar-nav{
+    background-color: #061932;
+}
+
+
+/* Estilos para el enlace en la barra de navegación */
+
+.nav-link,
+.navbar-toggler-icon {
+  color: #C1CDEE;
+}
+
+/* Estilos para el fondo de la barra de navegación desplegada */
+/* .navbar-nav {
+  background-color: #061932;
+} */
+
+/* Estilos para el fondo del menú desplegable */
+.dropdown-menu {
+  background-color: #061932;
+}
+
+/* Estilos para los enlaces en el menú desplegable */
+.dropdown-item {
+  color: #C1CDEE;
+}
+
+/* Estilos para el enlace activo */
+.navbar-nav .active .nav-link {
+  color: #6ddc9f;
+}
+
+/* Ajustes para el botón de alternancia en dispositivos pequeños */
+.navbar-toggler {
+  background-color: #67748F;
+  border: none;
+}
+
+/* Estilos para la barra superior en el menú desplegable */
+.navbar-toggler-icon {
+  background-color: #C1CDEE;
+}
+
+/* Ajustes para el enlace activo en el menú desplegable */
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #6ddc9f;
+  color: #061932;
+}
+
+/* Ajustes para el enlace al pasar el ratón en el menú desplegable */
+.dropdown-item:hover {
+  background-color: #6ddc9f;
+  color: #061932;
+}
+
+
+

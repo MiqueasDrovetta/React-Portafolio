@@ -25,6 +25,7 @@ export const NavBar = () => {
                             <NavDropdown.Item href="/habilidad">Habilidad</NavDropdown.Item>
                             <NavDropdown.Item href="/tecnologia">Tecnologìa</NavDropdown.Item>
                             <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
+                            <NavDropdown.Item href="/usuario">Usuario</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                 </Navbar.Collapse>
