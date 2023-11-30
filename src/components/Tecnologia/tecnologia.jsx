@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
 import { ImSpinner3 } from 'react-icons/im';
 import { Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ModificarTecnologia from './modificarTecnologia';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -59,8 +61,8 @@ export const Tecnologia = () => {
                 <td>{tecnologia.urlImage}</td>
                 <td><img src='{tecnologia.image}' alt="imagen"/></td>
                 <td>
-                  <Link to="" className="btn btn-primary">
-                    Editar
+                  <Link  path="${user.id}" element={<ModificarTecnologia />} className="btn btn-primary">
+                    Modificar               
                   </Link>
                   <Link to="" className="btn btn-secondary">
                     Eliminar
