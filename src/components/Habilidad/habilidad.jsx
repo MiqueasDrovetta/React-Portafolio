@@ -56,7 +56,7 @@ export const Habilidad = () => {
                                     <td>{softSkills.urlImage}</td>
                                     {/* <td>{softSkills.description}</td> */}
                                     <td>
-                                        <Link to="" className="btn btn-primary">Editar</Link>
+                                        <Link to="" className="btn btn-primary">Modificar</Link>
                                         <Link to="" className="btn btn-secondary">Eliminar</Link>
                                     </td>
                                 </tr>);

@@ -56,7 +56,7 @@ export const Blog = () => {
                 <td>{blog.urlImage}</td>
                 <td>
                   <Link to="" className="btn btn-primary">
-                    Editar
+                    Modificar
                   </Link>
                   <Link to="" className="btn btn-secondary">
                     Eliminar

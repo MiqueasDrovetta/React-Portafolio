@@ -62,7 +62,7 @@ export const User = () => {
                 <td>{user.description}</td>
                 <td>
                       <Link to={`/User/${user.id}`}>
-                        <button className="btn btn-primary">Editar</button>
+                        <button className="btn btn-primary">Modificar</button>
                       </Link>
                       <button className="btn btn-danger">Eliminar</button>
                 </td>
