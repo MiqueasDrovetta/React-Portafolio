@@ -4,94 +4,68 @@ import { useParams, useNavigate } from 'react-router-dom';
 const ModificarTecnologia = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [tecnologia, setTecnologia] = useState({});
+
   const direccion_api = 'https://localhost:7043';
 
-  useEffect(() => {
-    const buscarTecnologia = async () => {
-      try {
-        const response = await fetch(`${direccion_api}/Tecnology/user/${id}`);
-        const data = await response.json();
-        setTecnologia(data);
-      } catch (error) {
-        console.error('Error al buscar la tecnología:', error);
-      }
-    };
+  const [description, setDescription] = useState('');
+  const [image, setImage] = useState(null);
 
-    buscarTecnologia();
-  }, [id]);
-
-  const [formulario, setFormulario] = useState({
-    // Asegúrate de que los nombres de los atributos coincidan con la estructura del objeto devuelto por la API
-    title: tecnologia.title || '',
-    description: tecnologia.description || '',
-    enlace: tecnologia.enlace || '',
-    // Otros campos del formulario
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormulario({ ...formulario, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleModificar = async () => {
     try {
-      const response = await fetch(`${direccion_api}/Tecnology/user/${id}`, {
+      const formData = new FormData();
+      formData.append('Description', description);
+      formData.append('Image', image);
+
+      const response = await fetch(`${direccion_api}/Tecnology/${id}`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formulario),
+        body: formData,
       });
 
       if (response.ok) {
-        // Manejar el éxito de la actualización
-        console.log('Tecnología actualizada con éxito');
+        console.log('Tecnología modificada con éxito');
         navigate(`/tecnologia`);
       } else {
-        // Manejar el error
-        console.error('Error al actualizar la tecnología', response.statusText);
+        console.error('Error al modificar la tecnología', response.statusText);
       }
     } catch (error) {
-      console.error('Error al actualizar la tecnología:', error);
+      console.error('Error al modificar la tecnología:', error);
     }
+  };
+
+  const handleCancelar = () => {
+    // Redirigir a la página de tecnología para realizar otras acciones
+    navigate(`/tecnologia`);
   };
 
   return (
     <div>
       <h2>Modificar Tecnología</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Título:
-          <input
-            type="text"
-            name="title"
-            value={formulario.title}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Descripción:
-          <input
-            type="text"
-            name="description"
-            value={formulario.description}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Enlace:
-          <input
-            type="text"
-            name="enlace"
-            value={formulario.enlace}
-            onChange={handleInputChange}
-          />
-        </label>
-        {/* Otros campos del formulario */}
-        <button type="submit">Guardar Cambios</button>
-      </form>
+      <label htmlFor="description">Nueva Descripción:</label>
+      <br />
+      <input
+        className="form-control"
+        type="text"
+        id="description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <br />
+      <label htmlFor="image">Nueva Imagen:</label>
+      <br />
+      <input
+        className="form-control"
+        type="file"
+        id="image"
+        accept="image/*"
+        onChange={(e) => setImage(e.target.files[0])}
+      />
+      <br />
+      <button className="btn btn-success" onClick={handleModificar}>
+        Modificar
+      </button>
+      <button className="btn btn-danger" onClick={handleCancelar}>
+        Cancelar
+      </button>
     </div>
   );
 };

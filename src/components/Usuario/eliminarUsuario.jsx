@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-const EliminarTecnologia = () => {
+const EliminarUsuario = () => {
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -10,37 +10,36 @@ const EliminarTecnologia = () => {
 
   const handleEliminar = async () => {
     try {
-      const response = await fetch(`${direccion_api}/Tecnology/${id}`, {
+      const response = await fetch(`${direccion_api}/User/${id}`, {
         method: 'DELETE',
       });
 
       if (response.ok) {
         
-        console.log('Tecnología eliminada con éxito');
-        navigate(`/tecnologia`);
+        console.log('Usuario eliminado con éxito');
+        navigate(`/usuario`);
       } else {
         
-        console.error('Error al eliminar la tecnología', response.statusText);
+        console.error('Error al eliminar el Usuario', response.statusText);
       }
     } catch (error) {
-      console.error('Error al eliminar la tecnología:', error);
+      console.error('Error al eliminar el Usuario:', error);
     }
   };
 
   const handleCancelar = () => {
-    // Redirigir a tecnologia para realizar otras acciones
-    navigate(`/tecnologia`);
+    navigate(`/usuario`);
   };
 
   return (
     <div>    
           
-      <h2>Eliminar Tecnología</h2>
-      <p>¿Estás seguro de que deseas eliminar esta tecnología?</p>
+      <h2>Eliminar Usuario</h2>
+      <p>¿Estás seguro de que deseas eliminar este usuario?</p>
       <button className="btn btn-danger" onClick={handleEliminar}>Eliminar</button>
       <button className="btn btn-success" onClick={handleCancelar}>Cancelar</button>
     </div>
   );
 };
 
-export default EliminarTecnologia;
+export default EliminarUsuario;

@@ -1,0 +1,33 @@
+* {
+    /* Estilos comunes para todos los elementos */
+    margin: 0.01%;
+    padding: 0.5%;
+    box-sizing: border-box;
+    /* font-family: 'Arial', sans-serif; */
+    /* Otros estilos comunes */
+  }
+
+div {
+    background-color: #5effc19a;
+}
+
+.custom-bg-color {
+    background-color: #03c0229a;
+  }
+
+  .Paginado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Paginado button {
+    /* Agrega estilos según sea necesario */
+    margin: 0 5px; /* Márgenes entre los botones */
+  }
+  
+  .Paginado p {
+    /* Agrega estilos según sea necesario */
+    margin: 0 10px; /* Márgenes entre el número de página y los botones */
+  }
+  
