@@ -17,8 +17,8 @@ export const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/index">Index</Nav.Link>
-                        <NavDropdown title="Portfolio" id="basic-nav-dropdown">
+                        <Nav.Link href="/index">¿Que es Portafolio?</Nav.Link>
+                        <NavDropdown title="Opciones" id="basic-nav-dropdown">
                             <NavDropdown.Item href="/">Home</NavDropdown.Item>
                             <NavDropdown.Item href="/sobreMi">Sobre mì</NavDropdown.Item>
                             {/* <NavDropdown.Item href="/card">Card</NavDropdown.Item> */}

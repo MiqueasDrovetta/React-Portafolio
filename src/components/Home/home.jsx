@@ -13,7 +13,7 @@ export const Home = () => {
         <>
             <div className="container">
                 <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Bienvenido a mi portafolio</h1>
-                <p>Este es un lugar para mostrar mis proyectos, habilidades y experiencia.</p>
+                <p>Esta es una simulación de una aplicación para administrar CVs de personas ficticias. Para que el proyecto funcione correctamente este debe estar conectado con su backend desarrollado en .NET + Entity Framework para poder acceder a la base de datos que guarda realmente todos los CVs, las tecnologías, habilidades, usuarios, etc.</p>
             </div>
         </>
     )

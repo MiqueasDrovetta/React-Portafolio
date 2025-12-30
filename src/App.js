@@ -1,60 +1,39 @@
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar/navBar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//import { MyButton } from './components/MyButton/myButton';
 import { Home } from './components/Home/home';
-
-// SobreMi
 import { SobreMi } from './components/SobreMi/sobreMi';
-
-// HABILIDAD
 import { Habilidad } from './components/Habilidad/habilidad';
-
-// BLOG
-import { Blog } from './components/Blog/blog';
-
-// TECNOLOGIA
 import { Tecnologia } from './components/Tecnologia/tecnologia';
-import CrearTecnologia from './components/Tecnologia/crearTecnologia';
-import EliminarTecnologia from './components/Tecnologia/eliminarTecnologia';
-import ModificarTecnologia from './components/Tecnologia/modificarTecnologia';
-
-// USUARIO
+import { Blog } from './components/Blog/blog';
 import { Usuario } from './components/Usuario/usuario';
-import CrearUsuario from './components/Usuario/crearUsuario';
-import EliminarUsuario from './components/Usuario/eliminarUsuario';
+import { Index } from './components/Index/index';
 import ModificarUsuario from './components/Usuario/modificarUsuario';
+import ModificarTecnologia from './components/Tecnologia/modificarTecnologia';
+import EliminarTecnologia from './components/Tecnologia/eliminarTecnologia';
+import './App.css';
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-      
-      <NavBar/>
-
-      <Routes>
-        <Route exac path="/" element={<Home/>} />
-        <Route exac path="/sobreMi" element={<SobreMi/>} />
-
-        
-        <Route exac path="/habilidad" element={<Habilidad/>} />
-        <Route exac path="/blog" element={<Blog/>} />      
-
-        {/* TECNOLOGIA */}
-        <Route exac path="/tecnologia" element={<Tecnologia/>} />
-        <Route path="/tecnologia/nueva" element={<CrearTecnologia />}/>
-        <Route path="/eliminar-tecnologia/:id" element={<EliminarTecnologia />} />
-        <Route path="/modificar-tecnologia/:id" element={<ModificarTecnologia />} />
-
-        {/* USUARIO   */}
-        <Route exac path="/usuario" element={<Usuario/>} />                
-        <Route exac path="/usuario/nuevo" element={<CrearUsuario/>} />
-        <Route exac path="/eliminar-usuario/:id" element={<EliminarUsuario/>} />
-        <Route exac path="/modificar-usuario/:id" element={<ModificarUsuario/>} />        
-           
-      </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <div className="App">
+        <NavBar />
+        <div className="container mt-4">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/index" element={<Index />} />
+            <Route path="/sobreMi" element={<SobreMi />} />
+            <Route path="/habilidad" element={<Habilidad />} />
+            <Route path="/tecnologia" element={<Tecnologia />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/usuario" element={<Usuario />} />
+            <Route path="/modificar-usuario/:id" element={<ModificarUsuario />} />
+            <Route path="/modificar-tecnologia/:id" element={<ModificarTecnologia />} />
+            <Route path="/eliminar-tecnologia/:id" element={<EliminarTecnologia />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 

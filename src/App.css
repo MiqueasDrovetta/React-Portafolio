@@ -24,6 +24,7 @@ body {
 
 .container:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px); /* Changed */
 }
 
 .table {
@@ -38,6 +39,7 @@ body {
 .table tr:hover {
   background-color: #f2f2f2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transform: scale(1.01); /* Changed */
 }
 
 .btn {
@@ -47,7 +49,7 @@ body {
 
 .btn:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+  transform: translateY(-4px); /* Changed */
 }
 
 img {
@@ -56,7 +58,7 @@ img {
 }
 
 img:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Changed */
   transform: scale(1.1);
 }
 
@@ -69,4 +71,9 @@ img:hover {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.form-control:focus { /* Added */
+    border-color: #6ddc9f;
+    box-shadow: 0 0 0 0.2rem rgba(109, 220, 159, 0.25);
 }

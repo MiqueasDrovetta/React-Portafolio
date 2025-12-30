@@ -57,6 +57,48 @@ export const SobreMi = () => {
           apellido: 'Ramirez',
           description: 'Ingeniero de datos con experiencia en la construcción de pipelines de datos robustos y escalables.',
           urlImage: 'https://i.pravatar.cc/150?u=pedro-ramirez'
+        },
+        {
+          id: 4,
+          nombre: 'Luisa',
+          apellido: 'Martinez',
+          description: 'Desarrolladora Full Stack con experiencia en el stack MERN. Me gusta construir aplicaciones web completas y escalables.',
+          urlImage: 'https://i.pravatar.cc/150?u=luisa-martinez'
+        },
+        {
+          id: 5,
+          nombre: 'Carlos',
+          apellido: 'Sanchez',
+          description: 'Especialista en ciberseguridad con un enfoque en la protección de aplicaciones web y la prevención de ataques.',
+          urlImage: 'https://i.pravatar.cc/150?u=carlos-sanchez'
+        },
+        {
+          id: 6,
+          nombre: 'Ana',
+          apellido: 'Lopez',
+          description: 'Gerente de proyectos con experiencia en la entrega de proyectos de software a tiempo y dentro del presupuesto.',
+          urlImage: 'https://i.pravatar.cc/150?u=ana-lopez'
+        },
+        {
+          id: 7,
+          nombre: 'David',
+          apellido: 'Gomez',
+          description: 'Desarrollador de aplicaciones móviles para iOS y Android. Me apasiona crear aplicaciones que la gente ame usar.',
+          urlImage: 'https://i.pravatar.cc/150?u=david-gomez'
+        },
+        {
+          id: 8,
+          nombre: 'Sofia',
+          apellido: 'Rodriguez',
+          description: 'Científica de datos con experiencia en el análisis de datos para extraer información y tomar decisiones comerciales.',
+          urlImage: 'https://i.pravatar.cc/150?u=sofia-rodriguez'
+        },
+        {
+          id: 9,
+          nombre: 'Javier',
+          apellido: 'Hernandez',
+          description: 'Ingeniero de DevOps con experiencia en la automatización de la implementación y la administración de infraestructura en la nube.',
+          urlImage: 'https://i.pravatar.cc/150?u=javier-hernandez'
         }
       ];
 

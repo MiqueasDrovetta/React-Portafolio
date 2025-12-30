@@ -58,6 +58,36 @@ export const Tecnologia = () => {
               id: 4,
               description: 'CSS3',
               urlImage: 'https://cdn.worldvectorlogo.com/logos/css-3.svg'
+          },
+          {
+            id: 5,
+            description: 'Node.js',
+            urlImage: 'https://cdn.worldvectorlogo.com/logos/nodejs-icon.svg'
+          },
+          {
+            id: 6,
+            description: 'Python',
+            urlImage: 'https://cdn.worldvectorlogo.com/logos/python-5.svg'
+          },
+          {
+            id: 7,
+            description: 'Django',
+            urlImage: 'https://cdn.worldvectorlogo.com/logos/django.svg'
+          },
+          {
+            id: 8,
+            description: 'PostgreSQL',
+            urlImage: 'https://cdn.worldvectorlogo.com/logos/postgresql.svg'
+          },
+          {
+            id: 9,
+            description: 'Docker',
+            urlImage: 'https://cdn.worldvectorlogo.com/logos/docker.svg'
+          },
+          {
+            id: 10,
+            description: 'AWS',
+            urlImage: 'https://cdn.worldvectorlogo.com/logos/aws-2.svg'
           }
       ];
 

@@ -4,34 +4,44 @@ import { ImSpinner3 } from 'react-icons/im';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './habilidad.css';
-import { Link } from 'react-router-dom';
-
 
 export const Habilidad = () => {
 
     const fetchData = async () => {
         try {
-            // Hardcoded skills and technologies data
+            // Hardcoded soft skills data
             const hardcodedSoftSkills = [
                 {
                     id: 1,
-                    description: 'React',
-                    urlImage: 'https://cdn.worldvectorlogo.com/logos/react-2.svg'
+                    description: 'Comunicación Efectiva',
                 },
                 {
                     id: 2,
-                    description: 'JavaScript',
-                    urlImage: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg'
+                    description: 'Trabajo en Equipo',
                 },
                 {
                     id: 3,
-                    description: 'HTML5',
-                    urlImage: 'https://cdn.worldvectorlogo.com/logos/html-1.svg'
+                    description: 'Resolución de Problemas',
                 },
                 {
                     id: 4,
-                    description: 'CSS3',
-                    urlImage: 'https://cdn.worldvectorlogo.com/logos/css-3.svg'
+                    description: 'Pensamiento Crítico',
+                },
+                {
+                    id: 5,
+                    description: 'Adaptabilidad',
+                },
+                {
+                    id: 6,
+                    description: 'Liderazgo',
+                },
+                {
+                    id: 7,
+                    description: 'Gestión del Tiempo',
+                },
+                {
+                    id: 8,
+                    description: 'Creatividad',
                 }
             ];
 
@@ -54,7 +64,7 @@ export const Habilidad = () => {
 
     return (
         <>
-            <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Habilidades y Tecnologías</h1>
+            <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Habilidades Blandas</h1>
             <br />
             {
                 loading ?
@@ -63,31 +73,21 @@ export const Habilidad = () => {
                         <thead style={{ backgroundColor: '#282c34', color: 'white' }}>
                             <tr>
                                 <th>#</th>
-                                <th>Descripción Habilidad</th>
-                                <th>Imagen</th>
-                                <th>Acciones</th>
+                                <th>Habilidad Blanda</th>
                             </tr>
                         </thead>
                         <tbody>
                         {
-                            softSkills.map((softSkills) => {
-                                return (<tr key={softSkills.id} style={{ transition: 'all 0.3s ease-in-out' }}>
-                                    <td>{softSkills.id}</td>
-                                    <td>{softSkills.description}</td>
-                                    <td><img src={softSkills.urlImage} alt={softSkills.description} style={{ width: '50px', height: '50px' }} /></td>
-                                    {/* <td>{softSkills.description}</td> */}
-                                    <td>
-                                        <Link to="" className="btn btn-primary">Modificar</Link>
-                                        <Link to="" className="btn btn-secondary">Eliminar</Link>
-                                    </td>
+                            softSkills.map((skill) => {
+                                return (<tr key={skill.id} style={{ transition: 'all 0.3s ease-in-out' }}>
+                                    <td>{skill.id}</td>
+                                    <td>{skill.description}</td>
                                 </tr>);
                             })
                         }
                         </tbody>
                     </Table>
             }
-            
-            
         </>
     );
 }

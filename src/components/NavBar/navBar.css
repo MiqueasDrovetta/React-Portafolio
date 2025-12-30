@@ -20,6 +20,8 @@
 /* Estilos generales para la barra de navegación */
 .bg-body-tertiary {
   background-color: #061932;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Added shadow */
+  transition: all 0.3s ease-in-out;
 }
 
 .basic-navbar-nav{
@@ -30,9 +32,18 @@
 /* Estilos para el enlace en la barra de navegación */
 
 .nav-link,
+.navbar-brand,
 .navbar-toggler-icon {
   color: #C1CDEE;
+  transition: all 0.3s ease-in-out;
 }
+
+.nav-link:hover,
+.navbar-brand:hover { /* Added hover effect */
+  color: #6ddc9f;
+  transform: scale(1.05);
+}
+
 
 /* Estilos para el fondo de la barra de navegación desplegada */
 /* .navbar-nav {
@@ -42,11 +53,13 @@
 /* Estilos para el fondo del menú desplegable */
 .dropdown-menu {
   background-color: #061932;
+  border: none;
 }
 
 /* Estilos para los enlaces en el menú desplegable */
 .dropdown-item {
   color: #C1CDEE;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Estilos para el enlace activo */
@@ -58,6 +71,11 @@
 .navbar-toggler {
   background-color: #67748F;
   border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler:hover {
+    background-color: #8A9CB8; /* Added hover effect */
 }
 
 /* Estilos para la barra superior en el menú desplegable */
@@ -76,7 +94,5 @@
 .dropdown-item:hover {
   background-color: #6ddc9f;
   color: #061932;
+  transform: translateX(5px);
 }
-
-
-
