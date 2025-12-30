@@ -11,12 +11,31 @@ export const Habilidad = () => {
 
     const fetchData = async () => {
         try {
-            let response = await fetch("https://localhost:7043/SoftSkill/user/1");
-            let json = await response.json();
+            // Hardcoded skills and technologies data
+            const hardcodedSoftSkills = [
+                {
+                    id: 1,
+                    description: 'React',
+                    urlImage: 'https://cdn.worldvectorlogo.com/logos/react-2.svg'
+                },
+                {
+                    id: 2,
+                    description: 'JavaScript',
+                    urlImage: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg'
+                },
+                {
+                    id: 3,
+                    description: 'HTML5',
+                    urlImage: 'https://cdn.worldvectorlogo.com/logos/html-1.svg'
+                },
+                {
+                    id: 4,
+                    description: 'CSS3',
+                    urlImage: 'https://cdn.worldvectorlogo.com/logos/css-3.svg'
+                }
+            ];
 
-            setSoftSkills(json);
-
-            console.log(json);
+            setSoftSkills(hardcodedSoftSkills);
 
         } catch (e) {
 
@@ -35,11 +54,13 @@ export const Habilidad = () => {
 
     return (
         <>
+            <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Habilidades y Tecnologías</h1>
+            <br />
             {
                 loading ?
                     <div className='spinner'><ImSpinner3/></div> :
-                    <Table striped bordered hover>
-                        <thead>
+                    <Table striped bordered hover style={{ backgroundColor: '#f2f2f2', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)' }}>
+                        <thead style={{ backgroundColor: '#282c34', color: 'white' }}>
                             <tr>
                                 <th>#</th>
                                 <th>Descripción Habilidad</th>
@@ -50,10 +71,10 @@ export const Habilidad = () => {
                         <tbody>
                         {
                             softSkills.map((softSkills) => {
-                                return (<tr>
+                                return (<tr key={softSkills.id} style={{ transition: 'all 0.3s ease-in-out' }}>
                                     <td>{softSkills.id}</td>
                                     <td>{softSkills.description}</td>
-                                    <td>{softSkills.urlImage}</td>
+                                    <td><img src={softSkills.urlImage} alt={softSkills.description} style={{ width: '50px', height: '50px' }} /></td>
                                     {/* <td>{softSkills.description}</td> */}
                                     <td>
                                         <Link to="" className="btn btn-primary">Modificar</Link>

@@ -37,13 +37,33 @@ export const Tecnologia = () => {
 
   const fetchData = async () => {
     try {
-      let response = await fetch(`${url}/Tecnology/type/1?page=${page}&pageSize=4&query=${query}`);
-      let json = await response.json();
+      // Hardcoded technology data
+      const hardcodedTecnologias = [
+          {
+              id: 1,
+              description: 'React',
+              urlImage: 'https://cdn.worldvectorlogo.com/logos/react-2.svg'
+          },
+          {
+              id: 2,
+              description: 'JavaScript',
+              urlImage: 'https://cdn.worldvectorlogo.com/logos/javascript-1.svg'
+          },
+          {
+              id: 3,
+              description: 'HTML5',
+              urlImage: 'https://cdn.worldvectorlogo.com/logos/html-1.svg'
+          },
+          {
+              id: 4,
+              description: 'CSS3',
+              urlImage: 'https://cdn.worldvectorlogo.com/logos/css-3.svg'
+          }
+      ];
 
-      setTotalPages(json.totalPage);
-      setTecnologias(json.list);      
+      setTotalPages(1);
+      setTecnologias(hardcodedTecnologias);      
 
-      console.log(json);
     } catch (e) {
       // Manejar errores
     } finally {
@@ -62,7 +82,7 @@ export const Tecnologia = () => {
 
   return (
     <>
-      <h1>Tecnologias</h1>
+      <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Tecnologias</h1>
       <br />
       <button className="btn btn-success" onClick={() => navigate('/tecnologia/nueva')}>Agregar Tecnologia</button>
       <br />
@@ -76,8 +96,8 @@ export const Tecnologia = () => {
         </div>
       ) : (
         
-          <Table striped bordered hover>
-            <thead>
+          <Table striped bordered hover style={{ backgroundColor: '#f2f2f2', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)' }}>
+            <thead style={{ backgroundColor: '#282c34', color: 'white' }}>
               <tr>
                 <th>#</th>
                 <th>Descripción Tecnologia</th>
@@ -88,11 +108,11 @@ export const Tecnologia = () => {
             </thead>
             <tbody>
               {tecnologias.map((tecnologia) => (
-                <tr key={tecnologia.id}>
+                <tr key={tecnologia.id} style={{ transition: 'all 0.3s ease-in-out' }}>
                   <td>{tecnologia.id}</td>
                   <td>{tecnologia.description}</td>
                   <td>{tecnologia.urlImage}</td>
-                  <td><img src='{tecnologia.urlImage}' alt="imagen"/></td>
+                  <td><img src={tecnologia.urlImage} alt={tecnologia.description} style={{ width: '50px', height: '50px' }}/></td>
                   <td>                                     
                     <button className="btn btn-success" onClick={() => navigate(`/modificar-tecnologia/${tecnologia.id}`)}>Modificar</button>                  
                     <button className="btn btn-danger" onClick={() => navigate(`/eliminar-tecnologia/${tecnologia.id}`)}>Eliminar</button>                  

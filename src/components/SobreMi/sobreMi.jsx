@@ -35,13 +35,33 @@ export const SobreMi = () => {
 
   const fetchData = async () => {
     try {
-      let response = await fetch(`${url}/User/type/1?page=${page}&pageSize=4&query=${query}`);
-      let json = await response.json();
+      // Hardcoded about me data
+      const hardcodedUsers = [
+        {
+          id: 1,
+          nombre: 'Juan',
+          apellido: 'Perez',
+          description: 'Apasionado por la tecnología y el desarrollo de software. Me encanta crear soluciones innovadoras y eficientes.',
+          urlImage: 'https://i.pravatar.cc/150?u=juan-perez'
+        },
+        {
+          id: 2,
+          nombre: 'Maria',
+          apellido: 'Gonzalez',
+          description: 'Diseñadora UX/UI con un ojo para la estética y la usabilidad. Mi objetivo es crear experiencias de usuario memorables.',
+          urlImage: 'https://i.pravatar.cc/150?u=maria-gonzalez'
+        },
+        {
+          id: 3,
+          nombre: 'Pedro',
+          apellido: 'Ramirez',
+          description: 'Ingeniero de datos con experiencia en la construcción de pipelines de datos robustos y escalables.',
+          urlImage: 'https://i.pravatar.cc/150?u=pedro-ramirez'
+        }
+      ];
 
-      setTotalPages(json.totalPage);
-      setUsuarios(json.list);
-
-      console.log(json);
+      setTotalPages(1);
+      setUsuarios(hardcodedUsers);
     } catch (e) {
       // Manejar errores
     } finally {
@@ -60,7 +80,7 @@ export const SobreMi = () => {
 
   return (
     <>
-      <h1>Sobre Mi</h1>
+      <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Sobre Mi</h1>
       <br />
       <input className="form-control" type="text" value={query} onChange={find} />
 
@@ -70,11 +90,11 @@ export const SobreMi = () => {
         </div>
       ) : (
         <Table striped bordered hover>
-          <thead>
+          <thead style={{ backgroundColor: '#282c34', color: 'white' }}>
             <tr>
               <th>#</th>
               <th>Nombre</th>
-              <th>Apellido</th>    
+              <th>Apellido</th>
               <th>Sobre Mi</th>
               <th>Imagen</th>
               <th>Acciones</th>
@@ -82,14 +102,14 @@ export const SobreMi = () => {
           </thead>
           <tbody>
             {usuarios.map((usuario) => (
-              <tr key={usuario.id}>
+              <tr key={usuario.id} style={{ backgroundColor: '#f2f2f2', transition: 'all 0.3s ease-in-out' }}>
                 <td>{usuario.id}</td>
                 <td>{usuario.nombre}</td>
                 <td>{usuario.apellido}</td>
                 <td>{usuario.description}</td>
-                <td><img src={usuario.urlImage} alt="imagen" /></td>
+                <td><img src={usuario.urlImage} alt="imagen" style={{ borderRadius: '50%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)' }} /></td>
                 <td>
-                <button className="btn btn-success" onClick={() => navigate(`/modificar-usuario/${usuario.id}`)}>Modificar</button>   
+                  <button className="btn btn-success" onClick={() => navigate(`/modificar-usuario/${usuario.id}`)}>Modificar</button>
                 </td>
               </tr>
             ))}

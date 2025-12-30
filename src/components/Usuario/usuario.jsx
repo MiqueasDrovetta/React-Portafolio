@@ -34,13 +34,36 @@ export const Usuario = () => {
 
   const fetchData = async () => {
     try {
-      let response = await fetch(`${url}/User/type/1?page=${page}&pageSize=4&query=${query}`);
-      let json = await response.json();
+      // Hardcoded user data
+      const hardcodedUsers = [
+        {
+          id: 1,
+          nombre: 'Juan',
+          apellido: 'Perez',
+          profesion: 'Desarrollador de Software',
+          gmail: 'juan.perez@example.com',
+          urlImage: 'https://i.pravatar.cc/150?u=juan-perez'
+        },
+        {
+          id: 2,
+          nombre: 'Maria',
+          apellido: 'Gonzalez',
+          profesion: 'Diseñadora UX/UI',
+          gmail: 'maria.gonzalez@example.com',
+          urlImage: 'https://i.pravatar.cc/150?u=maria-gonzalez'
+        },
+        {
+          id: 3,
+          nombre: 'Pedro',
+          apellido: 'Ramirez',
+          profesion: 'Ingeniero de Datos',
+          gmail: 'pedro.ramirez@example.com',
+          urlImage: 'https://i.pravatar.cc/150?u=pedro-ramirez'
+        }
+      ];
 
-      setTotalPages(json.totalPage);
-      setUsuarios(json.list);
-
-      console.log(json);
+      setTotalPages(1);
+      setUsuarios(hardcodedUsers);
     } catch (e) {
       // Manejar errores
     } finally {
@@ -59,9 +82,9 @@ export const Usuario = () => {
 
   return (
     <>
-      <h1>Usuarios</h1>
-      <br />      
-      <button className="btn btn-success" onClick={() => navigate('/usuario/nuevo')}>Agregar Usuario</button>      
+      <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Usuarios</h1>
+      <br />
+      <button className="btn btn-success" onClick={() => navigate('/usuario/nuevo')}>Agregar Usuario</button>
       <br />
       <br />
       <input className="form-control" type="text" value={query} onChange={find} />
@@ -72,32 +95,31 @@ export const Usuario = () => {
         </div>
       ) : (
         <Table striped bordered hover>
-          <thead>
+          <thead style={{ backgroundColor: '#282c34', color: 'white' }}>
             <tr>
               <th>#</th>
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Profesion</th>
-              <th>Correo</th>              
-              <th>Imagen</th>
+              <th>Correo</th>
               <th>UrlImagen</th>
+              <th>Imagen</th>
               <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
             {usuarios.map((usuario) => (
-              <tr key={usuario.id}>
+              <tr key={usuario.id} style={{ backgroundColor: '#f2f2f2' }}>
                 <td>{usuario.id}</td>
                 <td>{usuario.nombre}</td>
                 <td>{usuario.apellido}</td>
                 <td>{usuario.profesion}</td>
                 <td>{usuario.gmail}</td>
                 <td>{usuario.urlImage}</td>
-                <td><img src={usuario.urlImage} alt="imagen" /></td>
+                <td><img src={usuario.urlImage} alt="imagen" style={{ borderRadius: '50%', boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)' }} /></td>
                 <td>
-                <button className="btn btn-success" onClick={() => navigate(`/modificar-usuario/${usuario.id}`)}>Modificar</button>                  
-                <button className="btn btn-danger" onClick={() => navigate(`/eliminar-usuario/${usuario.id}`)}>Eliminar</button>                  
-                 
+                  <button className="btn btn-success" onClick={() => navigate(`/modificar-usuario/${usuario.id}`)}>Modificar</button>
+                  <button className="btn btn-danger" onClick={() => navigate(`/eliminar-usuario/${usuario.id}`)}>Eliminar</button>
                 </td>
               </tr>
             ))}
