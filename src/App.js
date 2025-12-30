@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar/navBar';
 import { Home } from './components/Home/home';
 import { SobreMi } from './components/SobreMi/sobreMi';
@@ -15,7 +15,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router basename="/React-Portafolio">
+    <Router>
       <div className="App">
         <NavBar />
         <div className="container mt-4">
