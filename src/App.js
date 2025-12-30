@@ -15,7 +15,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/React-Portafolio">
       <div className="App">
         <NavBar />
         <div className="container mt-4">
