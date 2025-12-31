@@ -37,7 +37,7 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 1. **Clone the Frontend Repository**:
    ```sh
-   git clone https://github.com/MiqueasD/CV-Web-App-React.git
+   git clone https://github.com/MiqueasDrovetta/React-Portafolio.git
    cd CV-Web-App-React
    ```
 
@@ -61,5 +61,5 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 **Miqueas Drovetta**
 
-- **GitHub**: [MiqueasD](https://github.com/MiqueasD)
+- **GitHub**: [MiqueasDrovetta](https://github.com/MiqueasDrovetta)
 - **Email**: `miqueasdrovetta@outlook.com`
