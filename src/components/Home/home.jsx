@@ -1,20 +1,39 @@
+
 import React from 'react';
-
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
+import { useNavigate } from 'react-router-dom';
 import './home.css';
 
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
-
 export const Home = () => {
+    const navigate = useNavigate();
+
+    const handleProjectsClick = () => {
+        window.open('https://github.com/MiqueasDrovetta', '_blank');
+    };
+
+    const handleContactClick = () => {
+        window.location.href = 'mailto:miqueasdrovetta@outlook.com';
+    };
+
     return (
-        <>
-            <div className="container">
-                <h1 style={{ color: '#61dafb', textShadow: '2px 2px 4px #000000' }}>Bienvenido a mi portafolio</h1>
-                <p>Esta es una simulación de una aplicación para administrar CVs de personas ficticias. Para que el proyecto funcione correctamente este debe estar conectado con su backend desarrollado en .NET + Entity Framework para poder acceder a la base de datos que guarda realmente todos los CVs, las tecnologías, habilidades, usuarios, etc.</p>
+        <div className="hero-container">
+            <div className="hero-content">
+                <h1 className="hero-title">Hola, Soy Miqueas Drovetta Un Desarrollador Creativo e Inventivo</h1>
+                <p className="hero-subtitle">
+                    Me especializo en la creación de experiencias web modernas y dinámicas. Este proyecto es una simulacion de un gestor de CV, para que este ande correctamente debe conectarse a mi backend hecho en .NET + EF. Mi pasión es combinar código limpio con un diseño intuitivo para construir aplicaciones que a la gente le encante usar.
+                </p>
+                <div className="hero-actions">
+                    <button className="btn-primary" onClick={handleProjectsClick}>
+                        Explora Mis Proyectos
+                    </button>
+                    <button className="btn-secondary" onClick={handleContactClick}>
+                        Conectemos
+                    </button>
+                </div>
             </div>
-        </>
-    )
+            {/* Opcional: Podrías agregar una imagen o ilustración aquí */}
+            {/* <div className='hero-image-container'>
+                <img src='your-image.svg' alt='Creative Developer' />
+            </div> */}
+        </div>
+    );
 }

@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# Portafolio - CV Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application designed to manage and display professional profiles or CVs. It's built with a modern tech stack, featuring a React frontend and a .NET backend, and includes functionalities like creating, reading, updating, and deleting users, as well as a theme toggler for dark/light mode.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **User Management**: Complete CRUD (Create, Read, Update, Delete) functionality for user profiles.
+- **Dynamic Views**: Toggle between a responsive grid view and a detailed list view to browse users.
+- **Dark/Light Mode**: A theme switcher for a comfortable user experience in different lighting conditions.
+- **Search Functionality**: Easily find users with a real-time search filter.
+- **Modern UI**: A clean and intuitive interface built with React and styled with CSS, including interactive elements and animations.
+- **Contact Integration**: Direct links to GitHub and email for easy connection.
 
-### `npm start`
+## 🚀 Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**:
+  - React
+  - React Router
+  - React Icons
+  - Bootstrap
+  - CSS3
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Backend**:
+  - .NET
+  - Entity Framework
 
-### `npm test`
+## 🛠️ Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js and npm (or yarn)
+- .NET SDK
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the Frontend Repository**:
+   ```sh
+   git clone https://github.com/MiqueasD/CV-Web-App-React.git
+   cd CV-Web-App-React
+   ```
 
-### `npm run eject`
+2. **Install Dependencies**:
+   ```sh
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Run the Frontend**:
+   ```sh
+   npm start
+   ```
+   The application will be available at `http://localhost:3000`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Set up the Backend**:
+   This frontend requires the corresponding .NET backend to be running. Please refer to the backend project's README for instructions on how to set it up.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   **Note**: Ensure the API endpoints in the React components (e.g., in `src/components/Usuario/`) match the URLs where your backend is running.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 👤 Contact
 
-## Learn More
+**Miqueas Drovetta**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **GitHub**: [MiqueasD](https://github.com/MiqueasD)
+- **Email**: `miqueasdrovetta@outlook.com`

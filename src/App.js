@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { NavBar } from './components/NavBar/navBar';
 import { Home } from './components/Home/home';
@@ -11,14 +12,26 @@ import { Index } from './components/Index/index';
 import ModificarUsuario from './components/Usuario/modificarUsuario';
 import ModificarTecnologia from './components/Tecnologia/modificarTecnologia';
 import EliminarTecnologia from './components/Tecnologia/eliminarTecnologia';
+import { ThemeSwitch } from './components/ThemeSwitch/ThemeSwitch';
 import './App.css';
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
+
   return (
     <Router>
-      <div className="App">
+      <div className={`App ${theme}`}>
+        <ThemeSwitch theme={theme} toggleTheme={toggleTheme} />
         <NavBar />
-        <div className="container mt-4">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/index" element={<Index />} />
@@ -31,7 +44,7 @@ function App() {
             <Route path="/modificar-tecnologia/:id" element={<ModificarTecnologia />} />
             <Route path="/eliminar-tecnologia/:id" element={<EliminarTecnologia />} />
           </Routes>
-        </div>
+        </main>
       </div>
     </Router>
   );

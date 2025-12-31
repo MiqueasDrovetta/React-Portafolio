@@ -1,0 +1,28 @@
+
+.theme-switch-container {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 1030;
+}
+
+.theme-switch {
+  background-color: transparent;
+  border: 1px solid var(--switch-border);
+  color: var(--switch-icon);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.theme-switch:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px) scale(1.05);
+}

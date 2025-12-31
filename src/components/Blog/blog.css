@@ -1,0 +1,124 @@
+
+.blog-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.blog-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.search-container {
+  margin-bottom: 2.5rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-background);
+  color: var(--text-color);
+  border-radius: 12px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.3);
+}
+
+.loader {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.blog-card {
+  background-color: var(--card-background);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-card-image-container {
+  width: 100%;
+  height: 200px;
+}
+
+.blog-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-card-info {
+  padding: 1.5rem;
+}
+
+.blog-card-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.blog-card-author {
+  font-size: 0.9rem;
+  color: #a0aec0; /* A neutral, less prominent color */
+  margin-bottom: 1rem;
+}
+
+.blog-card-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.blog-card-read-more {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .blog-card {
+    flex-direction: row;
+  }
+
+  .blog-card-image-container {
+    width: 250px;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .blog-card-image {
+    border-radius: 16px 0 0 16px;
+  }
+}

@@ -1,0 +1,104 @@
+/* General Styles */
+.usuario-container {
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.view-toggle button {
+    margin-left: 10px;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* Grid View */
+.usuario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.usuario-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    color: var(--text-color);
+}
+
+.usuario-card:hover {
+    transform: translateY(-5px);
+}
+
+.usuario-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.usuario-info {
+    padding: 15px;
+}
+
+.usuario-name {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+.usuario-profession,
+.usuario-email {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.usuario-actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* List View */
+.table {
+    color: var(--text-color);
+    border-color: var(--card-border);
+}
+
+.dark .table {
+    --bs-table-bg: var(--card-background);
+    --bs-table-striped-bg: rgba(255, 255, 255, 0.05);
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.075);
+    --bs-table-border-color: var(--card-border);
+    --bs-table-color: var(--text-color);
+}
+
+.table thead {
+    background-color: #282c34;
+    color: white;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid var(--card-border);
+}

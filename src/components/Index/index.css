@@ -1,57 +1,62 @@
 .index-container {
-    padding: 3em;
-    background-color: #f8f9fa;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    margin-top: 2em;
+  padding: 50px 25px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
 }
 
-.title {
-    color: #343a40;
-    font-weight: bold;
-    font-size: 3em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+.index-container .title {
+  font-size: 3rem;
+  color: var(--text-color);
+  margin-bottom: 20px;
 }
 
-.subtitle {
-    color: #6c757d;
-    font-size: 1.5em;
+.index-container .subtitle {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 40px;
 }
 
-.text-container p {
-    font-size: 1.1em;
-    line-height: 1.6;
-    color: #495057;
+.index-container .text-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.index-container .text-container p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 
 .icon-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  flex-wrap: wrap;
 }
 
 .icon-wrapper {
-    text-align: center;
-    transition: all 0.3s ease-in-out;
-}
-
-.icon {
-    font-size: 4em;
-    color: #61dafb;
-    margin-bottom: 0.5em;
-    transition: all 0.3s ease-in-out;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin: 20px;
+  width: 200px;
 }
 
 .icon-wrapper:hover {
-    transform: translateY(-10px);
+  transform: scale(1.1);
 }
 
-.icon-wrapper:hover .icon {
-    color: #282c34;
-    transform: scale(1.2);
+.icon {
+  font-size: 4rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
 }
 
 .icon-wrapper p {
-    font-weight: bold;
-    color: #495057;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 15px;
+    color: var(--text-color);
 }
